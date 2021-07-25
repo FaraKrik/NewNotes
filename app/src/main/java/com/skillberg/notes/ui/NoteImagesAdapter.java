@@ -1,5 +1,6 @@
 package com.skillberg.notes.ui;
 
+import android.app.ActionBar;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,9 +16,6 @@ import com.skillberg.notes.db.NotesContract;
 
 import org.jetbrains.annotations.Nullable;
 
-/**
- * Адаптер для отображения изображений заметки
- */
 public class NoteImagesAdapter extends CursorRecyclerAdapter<NoteImagesAdapter.ViewHolder> {
 
     @Nullable
@@ -51,11 +49,10 @@ public class NoteImagesAdapter extends CursorRecyclerAdapter<NoteImagesAdapter.V
         viewHolder.itemView.setTag(imageId);
     }
 
-    /**
-     * ViewHolder
-     */
+
     class ViewHolder extends RecyclerView.ViewHolder {
 
+        public ActionBar.Tab itemView;
         private ImageView imageView;
 
         public ViewHolder(View itemView) {
@@ -79,9 +76,7 @@ public class NoteImagesAdapter extends CursorRecyclerAdapter<NoteImagesAdapter.V
 
     }
 
-    /**
-     * Интерфейс для обработки кликов на изображении
-     */
+
     public interface OnNoteImageLongClickListener {
         void onImageLongClick(long imageId);
     }

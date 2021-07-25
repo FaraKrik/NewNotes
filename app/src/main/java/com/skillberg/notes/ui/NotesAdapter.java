@@ -1,22 +1,20 @@
 package com.skillberg.notes.ui;
 
 import android.database.Cursor;
-import android.support.v7.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.skillberg.notes.R;
+
 import com.skillberg.notes.db.NotesContract;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-/**
- * Адаптер для заметок
- */
+
 public class NotesAdapter extends CursorRecyclerAdapter<NotesAdapter.ViewHolder> {
 
     private final OnNoteClickListener onNoteClickListener;
@@ -55,9 +53,7 @@ public class NotesAdapter extends CursorRecyclerAdapter<NotesAdapter.ViewHolder>
         return new ViewHolder(view);
     }
 
-    /**
-     * View holder
-     */
+
     class ViewHolder extends RecyclerView.ViewHolder {
 
         final SimpleDateFormat SDF = new SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault());
@@ -82,9 +78,6 @@ public class NotesAdapter extends CursorRecyclerAdapter<NotesAdapter.ViewHolder>
         }
     }
 
-    /**
-     * Слушатель для обработки кликов
-     */
     public interface OnNoteClickListener {
         void onNoteClick(long noteId);
     }
