@@ -7,6 +7,7 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.skillberg.notes.db.NotesContract;
@@ -84,4 +85,5 @@ public abstract class BaseNoteActivity extends AppCompatActivity implements Load
     protected abstract void displayNote(Cursor cursor);
 
 
+    public abstract void onBindViewHolder(@NonNull CreateNoteActivity.ViewHolder holder, int position);
 }
